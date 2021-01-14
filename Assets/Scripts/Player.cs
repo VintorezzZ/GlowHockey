@@ -20,6 +20,6 @@ public class Player : MonoBehaviour
     private void StopPlayerMovement()
     {
         if (TryGetComponent(out Rigidbody2D rb))
-            rb.bodyType = RigidbodyType2D.Static;
+            rb.velocity = Vector3.zero;
     }
 }

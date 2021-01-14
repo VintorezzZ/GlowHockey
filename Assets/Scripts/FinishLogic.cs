@@ -12,7 +12,7 @@ public class FinishLogic : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            print("finish");
+            //print("finish");
             onPlayerFinishCollision?.Invoke();
         }
     }

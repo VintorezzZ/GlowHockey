@@ -8,8 +8,10 @@
           <e p="Enemy.cs" t="Include" />
           <e p="FinishLogic.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="LevelGenerator.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="SwipeControl.cs" t="Include" />
+          <e p="UiManager.cs" t="Include" />
         </e>
       </e>
       <e p="GlowHockey.sln" t="IncludeFlat" />

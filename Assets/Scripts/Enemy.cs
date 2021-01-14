@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
         {
             // INSTANTIATE PARTICLES
             // GAME OVER
-            print("hit");
+            //print("hit");
             onCollisionWithEnemy?.Invoke();
         }
     }

@@ -11,8 +11,8 @@ public class SwipeControl : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    [Range (0.05f, 1f)]
-    public float throwForce = 0.3f;
+    [Range (10f, 30f)]
+    public float throwForce = 20f;
 
     private void Awake()
     {
@@ -23,7 +23,11 @@ public class SwipeControl : MonoBehaviour
     {
         AddForceWithSwipe();
         
+        #if UNITY_EDITOR
+        
         AddForceWithMouseInput();
+        
+        #endif
     }
 
     private void AddForceWithSwipe()
@@ -40,7 +44,7 @@ public class SwipeControl : MonoBehaviour
             timeInterval = touchTimeFinish - touchTimeStart;
             endPos = Input.GetTouch(0).position;
             direction = startPos - endPos;
-            rb.AddForce(-direction / timeInterval * throwForce);
+            rb.AddForce(-direction / timeInterval * (throwForce * Time.deltaTime));
         }
     }
 
@@ -61,7 +65,7 @@ public class SwipeControl : MonoBehaviour
             timeInterval = touchTimeFinish - touchTimeStart;
             endPos = Input.mousePosition;
             direction = startPos - endPos;
-            rb.AddForce(-direction / timeInterval * throwForce);
+            rb.AddForce(-direction / timeInterval * (throwForce * Time.deltaTime));
         }
     }
     
