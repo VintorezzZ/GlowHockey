@@ -74,8 +74,10 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LoadNextLevel()
     {
-        yield return new WaitForSecondsRealtime(_reloadTime);
+        GAManager.OnLevelComplete(_level);
         
+        yield return new WaitForSecondsRealtime(_reloadTime);
+
         _level++;
         onLevelChanged?.Invoke(_level);
 
